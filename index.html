@@ -2,14 +2,19 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Ember Starter Kit</title>
+<title>Doctor in a Box example</title>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/libs/jquery-1.9.1.js"></script>
+  <script src="js/libs/handlebars-1.0.0-rc.3.js"></script>
+  <script src="js/libs/ember-1.0.0-rc.3.js"></script>
+  <script src="js/libs/ember-data.js"></script>
 </head>
 <body>
-
   <script type="text/x-handlebars">
-    <h2>Welcome to Ember.js</h2>
+    <h2>Doctor in a Box</h2>
+
+    <h3>Patient Listing</h3>
 
     {{outlet}}
   </script>
@@ -17,16 +22,16 @@
   <script type="text/x-handlebars" data-template-name="index">
     <ul>
     {{#each controller}}
-      <li>{{ name }}</li>
+      <li>{{ name }}/{{ age }}/{{ gender }} ({{ weight }}lbs, {{ height }}")</li>
     {{/each}}
     </ul>
   </script>
 
-  <script src="js/libs/jquery-1.9.1.js"></script>
-  <script src="js/libs/handlebars-1.0.0-rc.3.js"></script>
-  <script src="js/libs/ember-1.0.0-rc.3.js"></script>
-  <script src="js/libs/ember-data.js"></script>
-  <script src="js/app.js"></script>
+  <script type="text/javascript">
+    var App = Ember.Application.create();
+  </script>
 
+  <script src="js/rest_adapter_strip_xml.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
